@@ -19,7 +19,29 @@ function QuestionForm(props) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log(formData);
+   
+    const formData={
+      prompt:prompt,
+      answer1:answer1,
+      answer2:answer2,
+      answer3:answer3,
+      answer4:answer4,
+      correctIndex:correctIndex
+    };
+    fetch("  http://localhost:4000"),{
+      method:"POST",
+      headers:{
+        "Content-Type": "application/json",
+      },
+      body:{
+        "prompt": string,
+        "answers": array of strings,
+        "correctIndex": integer
+      }
+      .then((r) => r.json())
+      .then((formItem) => console.log(formItem));
+    }
+    
   }
 
   return (
