@@ -20,29 +20,29 @@ function QuestionForm(props) {
   function handleSubmit(event) {
     event.preventDefault();
    
-    const formData={
-      prompt:prompt,
-      answer1:answer1,
-      answer2:answer2,
-      answer3:answer3,
-      answer4:answer4,
-      correctIndex:correctIndex
+    const formQuestion={
+      prompt:formData.prompt,
+      answer1:formData.answer1,
+      answer2:formData.answer2,
+      answer3:formData.answer3,
+      answer4:formData.answer4,
+      correctIndex:formData.correctIndex
     };
-    fetch("  http://localhost:4000"),{
+    fetch("http://localhost:4000",{
       method:"POST",
       headers:{
         "Content-Type": "application/json",
       },
-      body:{
-        "prompt": string,
-        "answers": array of strings,
-        "correctIndex": integer
-      }
+      body:JSON.stringify({ 
+      "prompt": string,
+      "answers": array of strings,
+      "correctIndex": integer}),
+    })
       .then((r) => r.json())
-      .then((formItem) => console.log(formItem));
+      .then((formQ) => console.log(formQ));
     }
     
-  }
+  
 
   return (
     <section>
