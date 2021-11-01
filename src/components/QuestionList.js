@@ -9,6 +9,10 @@ function QuestionList() {
     .then((questions)=>setQuestions(questions))
 },[])
 
+function handleDeleteItem(deletedItem) {
+  const updatedQuestions = questions.filter((question) => question.id !== deletedItem.id);
+  setQuestions(updatedQuestions);
+}
 function newQuestion(e){
   e.preventDefault()
   const newQuestion={
@@ -23,7 +27,7 @@ function newQuestion(e){
     <section>
       <h1>Quiz Questions</h1>
       {questions.map((question)=>{
-       return  <QuestionItem key={question.id} question={question}/>
+       return  <QuestionItem key={question.id}  onDeleteItem={handleDeleteItem} question={question}/>
       })/* display QuestionItem components here after fetching */}
     </section>
   );
