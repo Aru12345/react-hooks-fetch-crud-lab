@@ -8,7 +8,7 @@ function QuestionItem({ question,onDeleteItem }) {
     method:"DELETE",
   })
   .then(r=>r.json())
-  .then(()=>onDeleteItem("deleted"));
+  .then(()=>onDeleteItem(question));
   }
   
 

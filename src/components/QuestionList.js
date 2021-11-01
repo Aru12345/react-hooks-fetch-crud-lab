@@ -10,7 +10,7 @@ function QuestionList() {
 },[])
 
 function handleDeleteItem(deletedItem) {
-  const updatedQuestions = questions.filter((question) => question.id !== deletedItem.id);
+ const updatedQuestions = questions.filter((question) => question.id !== deletedItem.id);
   setQuestions(updatedQuestions);
 }
 function newQuestion(e){
